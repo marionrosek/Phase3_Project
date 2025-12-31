@@ -241,7 +241,7 @@ plt.show
 ```
 ## 📈 Decision Tree
 
-![Decision Tree](./Decision_tree.png)
+![Decision Tree](./Decision%20tree.png)
 
 The decision tree reveals how predictor variables interact to determine customer satisfaction.Reviews equal to 2 represents
 high satisfaction while  reviews below 1 represent low satisfaction.Theatres is the most important predictor and influenced
