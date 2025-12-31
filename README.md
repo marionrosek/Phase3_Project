@@ -176,7 +176,7 @@ F1-score:  0.055
 dt = DecisionTreeClassifier(criterion='entropy',class_weight='balanced',max_depth=5,random_state=42)
 dt.fit(X_train, y_train)
 ```
-Then use decision tree to make predictions of y.
+Then use a decision tree to make predictions of y.
 ```python
 y_train_pred_dt = dt.predict(X_train)
 y_test_pred_dt = dt.predict(X_test)
@@ -192,7 +192,7 @@ recall = recall_score(y_test,y_test_pred_dt)
 f1 = f1_score(y_test,y_test_pred_dt)
 ```
 ```python
-print(f"""Decision Tree results:
+print(f""" Decision Tree results:
            
 Train Accuracy: {train_accuracy:.3f}
 Test Accuracy:  {test_accuracy:.3f}
@@ -241,7 +241,7 @@ plt.show
 ```
 ## 📈 Decision Tree
 
-![Decision Tree]("./Decision20%tree.png")
+![Decision Tree](./Decision20%tree.png)
 
 
 The decision tree reveals how predictor variables interact to determine customer satisfaction.Reviews equal to 2 represents
