@@ -129,9 +129,18 @@ X_test_scaled = scaler.transform(X_test)
 ```python
 y.value_counts(normalize=True)
 ```
+```python
+from sklearn.pipeline import Pipeline
+pipeline = Pipeline([
+    ('scaler', StandardScaler()),
+    ('model', DecisionTreeClassifier(class_weight='balanced'))
+])
+
+pipeline.fit(X_train, y_train)
+```
 
 ### Modelling
-We buiLt two models to get the highest performance for our task.We created a logistic model and Decison tree model.
+We built two models to get the highest performance for our task.We created a logistic model and Decison tree model.
 
 #### Logistic Regression
 ```python
@@ -235,6 +244,7 @@ print(accuracy)
 The model shows a high accuracy of 90% but fails to correctly predict low satisfaction.
 
 ### Evaluation
+A classification model was used because the target variable is categorical (High vs Low Satisfaction). A Decision Tree was selected since it provides high accuracy and allows easy interpretation of how predictor variables influence satisfaction
 Logistic Regression and Decision tree models were trained and evaluated.
 Decision Tree showed a higher recall score and F1-score and was therefore selected for predicting customer satisfaction.
 We then sort the X values to see the most influential predictors in predicting customer satisfaction.
@@ -276,6 +286,13 @@ business to understand why a customer is predicted to be satisfied or not.
 - Decision tree achieved highest recall and f1 score compared to the other model and was therefore used to make predictions on
   customer satisfaction
 - Top splits,theatres, indicate highest satisfaction.
+
+## Limitations
+Class imbalance: The model was biased towards High Satisfaction, leading to poor prediction of low satisfcation.
+
+Misleading accuracy: High accuracy did not reflect true performance, as the model struggled with recall and F1-score .
+
+Limited generalization: The decision tree was sensitive to data quality and may overfit, reducing its ability to perform well on unseen data.
 
 ## Recommendation
 - Improve service quality in theatres and art galleries for higher reviews
