@@ -210,7 +210,29 @@ Precision: 0.307
 Recall:    0.916
 F1-score:  0.460
 ```
-
+```python
+report = classification_report(y_test, y_test_pred, target_names=['High Satisfaction','Low Satisfaction'])
+print(report)
+```
+```python
+cm = confusion_matrix(y_test, y_test_pred)
+print(cm)
+```
+```python
+disp = ConfusionMatrixDisplay( confusion_matrix=cm,
+                                display_labels=['High Satisfaction','Low Satisfaction'])
+disp.plot()
+plt.xlabel("Predicted label")
+plt.ylabel("True label")
+plt.title("Confusion Matrix")
+plt.show()
+```
+The confusion matrix provides a detailed evaluation of our classification model by showing how many predictions were correct and incorrect for each class. The model correctly predicted 986 customers to be highly satisfied and 3 customers to be lowly satisfied. However,the model is very poor at predicting Low Satisfaction as it incorrectly predicted 92 customers as highly satisfied but were not satisfied.
+```python
+accuracy = (986+3)/(986+11+92+3)
+print(accuracy)
+```
+The model shows a high accuracy of 90% but fails to correctly predict low satisfaction.
 
 ### Evaluation
 Logistic Regression and Decision tree models were trained and evaluated.
