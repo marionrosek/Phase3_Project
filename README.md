@@ -236,6 +236,7 @@ plt.ylabel("True label")
 plt.title("Confusion Matrix")
 plt.show()
 ```
+![Confusion matrix](./output.png)
 The confusion matrix provides a detailed evaluation of our classification model by showing how many predictions were correct and incorrect for each class. The model correctly predicted 986 customers to be highly satisfied and 3 customers to be lowly satisfied. However,the model is very poor at predicting Low Satisfaction as it incorrectly predicted 92 customers as highly satisfied but were not satisfied.
 ```python
 accuracy = (986+3)/(986+11+92+3)
